@@ -69,13 +69,13 @@ function App() {
           </div>
           <div className="p-6 grid md:grid-cols-2 gap-8">
             <div>
-              <h2 className="text-lg font-semibold mb-2 text-red-600">2. 设节假日 (红)</h2>
+              <h2 className="text-lg font-semibold mb-2 text-red-600">2. 非周末但也不需要计算考勤的日期如节假日或者出差 (红)</h2>
               <div className="bg-red-50 p-4 rounded-xl border border-red-100 flex justify-center">
                 <DatePicker inline locale="zh-CN" highlightDates={[{ "react-datepicker__day--highlighted-custom-1": holidays }]} onChange={(date) => toggleDate(date, 'holiday')} dayClassName={(date) => holidays.find(d => d.getTime() === date.getTime()) ? "bg-red-500 text-white rounded-full" : undefined} />
               </div>
             </div>
             <div>
-              <h2 className="text-lg font-semibold mb-2 text-blue-600">3. 设补班 (蓝)</h2>
+              <h2 className="text-lg font-semibold mb-2 text-blue-600">3. 在周末但需要工作的日期如调休 (蓝)</h2>
               <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 flex justify-center">
                 <DatePicker inline locale="zh-CN" highlightDates={[{ "react-datepicker__day--highlighted-custom-2": makeupDays }]} onChange={(date) => toggleDate(date, 'makeup')} dayClassName={(date) => makeupDays.find(d => d.getTime() === date.getTime()) ? "bg-blue-600 text-white rounded-full" : undefined} />
               </div>
